@@ -1,16 +1,17 @@
 # Techvis Co. – Integrated POS System
 
-A desktop Point of Sale (POS) application developed using JavaFX and MySQL. The system allows store employees to manage smartphone products, process customer orders, and store transaction records in a database through a graphical user interface.
+A desktop Point of Sale (POS) application developed using JavaFX and MySQL. The system allows store employees to manage smartphone products, process customer orders, and maintain transaction records through a graphical user interface.
 
 ## Project Overview
 
-Techvis Co. is a fictional smartphone retail business. This project was developed as an extension of an earlier JavaFX POS application, with a focus on database integration and product management.
+Techvis Co. is a fictional smartphone retail business. This project was developed as an extension of an earlier JavaFX POS application, with a focus on database integration, product management, and order processing.
 
-The application provides an interface for employees to browse smartphone products, add items to a shopping cart, manage product information, and complete customer orders. Product details and transaction records are stored in a MySQL database.
+The application integrates multiple functions into a single desktop system, allowing employees to browse smartphone products, manage product information, process customer orders, and review daily order information. Product details and transaction records are stored in a MySQL database.
 
 ## Key Features
 
 ### 1. Order Management
+
 - Browse smartphone products by brand, including Apple, Samsung, and Google.
 - Add products to the shopping cart and adjust item quantities.
 - Apply a gift voucher discount of $1,000.
@@ -21,6 +22,7 @@ The application provides an interface for employees to browse smartphone product
 - Save completed orders and their associated product details to the database.
 
 ### 2. Product Management
+
 - Search for products by brand, product ID, name, or price.
 - View product information in a table.
 - Add new products to the database.
@@ -28,19 +30,22 @@ The application provides an interface for employees to browse smartphone product
 - Delete products from the database.
 - Display operation results and system messages through the interface.
 
-### 3. Database Integration
+### 3. Daily Order Analysis
 
-The application uses a MySQL database named smtph_db to store smartphone product information and customer orders. The database consists of three related tables:
+- Access the daily order analysis module through the integrated application.
+- Review order-related information through a dedicated analysis interface.
 
-| Table | Description |
-|---|---|
-| `smtph` | Stores smartphone details, including product ID, brand, name, price, image filename, and description. |
-| `sale_order` | Stores order records, including order date, total price, and customer information. |
-| `order_detail` | Stores individual items within each order, including product ID, quantity, price, and product name. |
+### 4. Database Integration
 
-Primary keys and foreign keys are used to maintain relationships between the tables. The order_detail table connects sale_order and smtph through foreign keys, linking each order to its associated products.
+The application uses MySQL to store product information and order records. The database consists of three main tables:
 
-The SQL script also includes sample product records and order data for database testing.
+| Table          | Description                                                                                   |
+| -------------- | --------------------------------------------------------------------------------------------- |
+| `smtph`        | Stores smartphone information, including brand, name, price, image filename, and description. |
+| `sale_order`   | Stores order information, including order date, total price, and customer details.            |
+| `order_detail` | Stores the products and quantities associated with each order.                                |
+
+Primary keys and foreign keys are used to establish relationships between the tables and maintain connections between orders and their product details.
 
 ## Technologies Used
 
@@ -50,85 +55,153 @@ The SQL script also includes sample product records and order data for database 
 - **Query Language:** SQL
 - **Database Connectivity:** MariaDB JDBC Driver
 - **Database Management:** XAMPP / phpMyAdmin
+- **IDE:** Apache NetBeans
 
-## Database Setup
+## Application Structure
 
-The SQL script is provided in the database/ folder.
-**Note:** The customer names (e.g., John and Amy) used in the sample order records are fictitious and are included for demonstration and testing purposes only.
+The main application class is `integ.mergedAPPv1`, located in `src/integ/mergedAPPv1.java`.
 
-### Setup Instructions:
+It integrates the following modules into a single JavaFX application:
 
-Start the MySQL database service using XAMPP.
+| Module               | Description                                |
+| -------------------- | ------------------------------------------ |
+| Order Entry System   | Handles customer orders and checkout.      |
+| Product Maintenance  | Supports product searching and management. |
+| Daily Order Analysis | Provides access to daily order analysis.   |
+| About This System    | Displays system information.               |
 
-Open phpMyAdmin.
-
-Import database/smtph_db.sql to create the database and its tables.
-
-The script also inserts sample product and order records.
-
-**Note:** The SQL script starts by dropping the existing smtph_db database before creating it again. Importing the script will permanently remove existing data in that database. Back up any important data before running it.
+The graphical user interface is built directly in Java using JavaFX components, rather than designed with Scene Builder or FXML.
 
 ## Screenshots
 
 Screenshots below demonstrate the main functions and interface of the application.
 
 ### Order Entry System
+
 <p align="center">
-  <img src="screenshots/order-entry.png" width="600">
+&#x20; <img src="screenshots/order-entry.png" width="600">
 </p>
+
 The interface displays the selected products, shopping cart, customer details, and receipt preview. Employees can review the order before completing the checkout process.
 
 ### Customer Information Validation
+
 <p align="center">
-  <img src="screenshots/customer-validation.png" width="600">
+&#x20; <img src="screenshots/customer-validation.png" width="600">
 </p>
-The system checks whether all required customer information has been provided. If any fields are incomplete, a warning message is displayed and the previously entered customer information is cleared.
+
+The system checks whether all required customer information has been provided. If any fields are incomplete, a warning message is displayed.
 
 ### Product Maintenance
+
 <p align="center">
-  <img src="screenshots/add-product-1.png" width="600">
+&#x20; <img src="screenshots/add-product-1.png" width="600">
 </p>
+
 This interface allows employees to search for smartphone products by ID, name, or price. Products can also be filtered by brand and displayed in a table for easier management.
 
 ### Add Product
+
 <p align="center">
-  <img src="screenshots/add-product-2.png" width="600">
+&#x20; <img src="screenshots/add-product-2.png" width="600">
 </p>
+
 Employees can enter the details of a new smartphone and add it to the database. A confirmation message is displayed when the product has been successfully added.
 
 ### Product Management
+
 <p align="center">
-  <img src="screenshots/update-delete-product-db.png" width="600">
+&#x20; <img src="screenshots/update-delete-product-db.png" width="600">
 </p>
+
 <p align="center">
-  <img src="screenshots/update-delete-product-pos.png" width="600">
+&#x20; <img src="screenshots/update-delete-product-pos.png" width="600">
 </p>
+
 <p align="center">
-  <img src="screenshots/update-delete-product-db2.png" width="600">
+&#x20; <img src="screenshots/update-delete-product-db2.png" width="600">
 </p>
+
 Employees can select an existing product (e.g. Galaxy S21 FE) and remove it from the database. The system displays a confirmation message after the deletion is completed.
 
 ### Database Structure
+
 <p align="center">
-  <img src="screenshots/database-structure_order_detail.png" width="600">
+&#x20; <img src="screenshots/database-structure_order_detail.png" width="600">
 </p>
+
 This table stores the products associated with each order, including product IDs, quantities, prices, and names. Foreign keys link each record to the corresponding order and product.
+
 <p align="center">
-  <img src="screenshots/database-structure_sale_order.png" width="600">
+&#x20; <img src="screenshots/database-structure_sale_order.png" width="600">
 </p>
+
 This table stores order records, including order dates, total prices, and customer information such as names, phone numbers, and delivery addresses.
+
 <p align="center">
-  <img src="screenshots/database-structure_smtph.png" width="600">
+&#x20; <img src="screenshots/database-structure_smtph.png" width="600">
 </p>
+
 This table stores smartphone product information, including product IDs, brands, names, prices, image filenames, and descriptions.
+
+## How to Run
+
+### Prerequisites
+
+- Java JDK compatible with the project's configuration
+- Apache NetBeans IDE
+- XAMPP or another compatible MySQL server
+- MariaDB JDBC Driver
+- JavaFX libraries required by the project
+
+### Setup Instructions
+
+**1. Download or clone the repository**
+
+Download the project files or clone this repository to your local machine.
+
+**2. Open the project in NetBeans**
+
+- Launch Apache NetBeans IDE.
+- Select `File` → `Open Project`.
+- Navigate to the downloaded project folder.
+- Open the entire project folder, rather than individual Java files.
+
+**3. Set up the database**
+
+- Start MySQL using XAMPP.
+- Open phpMyAdmin at `http://localhost/phpmyadmin`.
+- Import the SQL script `smtph_db.sql` to create the database and its tables.
+- Ensure the database connection settings in the project match your local MySQL configuration.
+
+**4. Configure the main application**
+
+The main application class is:
+
+`integ.mergedAPPv1`
+
+If necessary, configure this class as the Main Class in the NetBeans project settings.
+
+**5. Run the application**
+
+Right-click the project in NetBeans and select **Run**, or press `F6`.
+
+Make sure the JavaFX libraries, JDBC driver, and database connection are configured correctly before running the application.
+
+### Important Notes
+
+- The SQL setup script contains a `DROP DATABASE IF EXISTS` statement. Back up any existing database named `smtph_db` before importing the script.
+- Database connection settings may need to be adjusted for your local environment.
+- Ensure that the required CSS files, images, and other project resources are included when downloading the repository.
 
 ## What I Learned
 
 Through this project, I gained practical experience in:
 
 - Developing desktop applications using Java and JavaFX.
-- Designing graphical user interfaces and handling user interactions.
-- Connecting a Java application to a MySQL database.
+- Building graphical user interfaces programmatically.
+- Handling user interactions and JavaFX event handling.
+- Connecting a Java application to a MySQL database using JDBC.
 - Performing database operations, including creating, retrieving, updating, and deleting records (CRUD).
 - Designing relational database tables using primary keys and foreign keys.
 - Implementing input validation and handling incomplete customer information.
