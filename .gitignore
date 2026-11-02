@@ -1,1 +1,14 @@
+# NetBeans build output
+/build/
+/dist/
 
+# Generated receipt
+receipt.txt
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
