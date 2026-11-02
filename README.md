@@ -114,7 +114,7 @@ Through this project, I gained practical experience in:
 
 ## Additional Documentation
 
-A detailed project documentation in Traditional Chinese (正體／繁體中文) is also available in Microsoft Word format.
+A detailed project documentation in Traditional Chinese (繁體中文) is also available in Microsoft Word format.
 
 [View Traditional Chinese Documentation](docs/Techvis-Co-Project-Documentation-zh-TW.docx)
 
