@@ -52,16 +52,53 @@ Primary keys and foreign keys are used to establish relationships between the ta
 Screenshots below demonstrate the main functions and interface of the application.
 
 ### Order Entry System
+<p align="center">
+  <img src="screenshots/order-entry.png" width="600">
+</p>
+The interface displays the selected products, shopping cart, customer details, and receipt preview. Employees can review the order before completing the checkout process.
 
-The order entry interface allows employees to browse products, manage the shopping cart, enter customer information, and review the order before checkout.
+### Customer Information Validation
+<p align="center">
+  <img src="screenshots/customer-validation.png" width="600">
+</p>
+The system checks whether all required customer information has been provided. If any fields are incomplete, a warning message is displayed and the previously entered customer information is cleared.
 
 ### Product Maintenance
+<p align="center">
+  <img src="screenshots/add-product-1.png" width="600">
+</p>
+This interface allows employees to search for smartphone products by ID, name, or price. Products can also be filtered by brand and displayed in a table for easier management.
 
-The product maintenance interface provides tools for searching, adding, updating, and deleting smartphone products.
+### Add Product
+<p align="center">
+  <img src="screenshots/add-product-2.png" width="600">
+</p>
+Employees can enter the details of a new smartphone and add it to the database. A confirmation message is displayed when the product has been successfully added.
+
+### Product Management
+<p align="center">
+  <img src="screenshots/update-delete-product-db.png" width="600">
+</p>
+<p align="center">
+  <img src="screenshots/update-delete-product-pos.png" width="600">
+</p>
+Employees can select an existing product (e.g. Galaxy S21 FE) and remove it from the database. The system displays a confirmation message after the deletion is completed.
 
 ### Database Structure
+<p align="center">
+  <img src="screenshots/database-structure_order_detail.png" width="600">
+</p>
+This table stores the products associated with each order, including product IDs, quantities, prices, and names. Foreign keys link each record to the corresponding order and product.
 
-The MySQL database contains three related tables: `smtph`, `sale_order`, and `order_detail`, which store product information and completed transactions.
+<p align="center">
+  <img src="screenshots/database-structure_sale_order.png" width="600">
+</p>
+This table stores order records, including order dates, total prices, and customer information such as names, phone numbers, and delivery addresses.
+
+<p align="center">
+  <img src="screenshots/database-structure_smtph.png" width="600">
+</p>
+This table stores smartphone product information, including product IDs, brands, names, prices, image filenames, and descriptions.
 
 ## What I Learned
 
@@ -74,6 +111,12 @@ Through this project, I gained practical experience in:
 - Designing relational database tables using primary keys and foreign keys.
 - Implementing input validation and handling incomplete customer information.
 - Integrating product management and order processing into one application.
+
+### Additional Documentation
+
+A detailed project documentation in Traditional Chinese (正體／繁體中文) is also available in Microsoft Word format.
+
+[View Traditional Chinese Documentation](docs/Techvis-Co-Project-Documentation-zh-TW.docx)
 
 ## Project Information
 
