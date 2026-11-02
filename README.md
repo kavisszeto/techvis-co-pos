@@ -51,6 +51,7 @@ Primary keys and foreign keys are used to establish relationships between the ta
 
 - **Programming Language:** Java
 - **GUI Framework:** JavaFX (Programmatic UI Development)
+- **UI Styling:** JavaFX CSS
 - **Database:** MySQL
 - **Query Language:** SQL
 - **Database Connectivity:** MariaDB JDBC Driver
@@ -70,7 +71,7 @@ It integrates the following modules into a single JavaFX application:
 | Daily Order Analysis | Provides access to daily order analysis.   |
 | About This System    | Displays system information.               |
 
-The graphical user interface is built directly in Java using JavaFX components, rather than designed with Scene Builder or FXML.
+The graphical user interface is built programmatically using JavaFX components, with CSS stylesheets applied to customise the visual appearance and styling of the interface. The project does not use Scene Builder or FXML.
 
 ## Screenshots
 
@@ -198,7 +199,8 @@ Make sure the JavaFX libraries, JDBC driver, and database connection are configu
 
 Through this project, I gained practical experience in:
 
-- Developing desktop applications using Java and JavaFX.
+- Independently designing and developing desktop application interfaces using JavaFX.
+- Applying JavaFX CSS to customise interface styling and visual presentation.
 - Building graphical user interfaces programmatically.
 - Handling user interactions and JavaFX event handling.
 - Connecting a Java application to a MySQL database using JDBC.
