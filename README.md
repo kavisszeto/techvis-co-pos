@@ -82,6 +82,9 @@ Employees can enter the details of a new smartphone and add it to the database. 
 <p align="center">
   <img src="screenshots/update-delete-product-pos.png" width="600">
 </p>
+<p align="center">
+  <img src="screenshots/update-delete-product-db2.png" width="600">
+</p>
 Employees can select an existing product (e.g. Galaxy S21 FE) and remove it from the database. The system displays a confirmation message after the deletion is completed.
 
 ### Database Structure
@@ -89,12 +92,10 @@ Employees can select an existing product (e.g. Galaxy S21 FE) and remove it from
   <img src="screenshots/database-structure_order_detail.png" width="600">
 </p>
 This table stores the products associated with each order, including product IDs, quantities, prices, and names. Foreign keys link each record to the corresponding order and product.
-
 <p align="center">
   <img src="screenshots/database-structure_sale_order.png" width="600">
 </p>
 This table stores order records, including order dates, total prices, and customer information such as names, phone numbers, and delivery addresses.
-
 <p align="center">
   <img src="screenshots/database-structure_smtph.png" width="600">
 </p>
