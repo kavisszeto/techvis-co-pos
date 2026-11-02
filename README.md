@@ -1,6 +1,3 @@
-# techvis-pos
-Techvis Co. – Integrated Order POS System 
-
 # Techvis Co. – Integrated POS System
 
 A desktop Point of Sale (POS) application developed using JavaFX and MySQL. The system allows store employees to manage smartphone products, process customer orders, and store transaction records in a database through a graphical user interface.
