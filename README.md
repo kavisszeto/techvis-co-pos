@@ -45,7 +45,7 @@ The SQL script also includes sample product records and order data for database 
 ## Technologies Used
 
 - **Programming Language:** Java
-- **GUI Framework:** JavaFX
+- **GUI Framework:** JavaFX (Programmatic UI Development)
 - **Database:** MySQL
 - **Query Language:** SQL
 - **Database Connectivity:** MariaDB JDBC Driver
