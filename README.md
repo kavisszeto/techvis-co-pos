@@ -30,22 +30,43 @@ The application provides an interface for employees to browse smartphone product
 
 ### 3. Database Integration
 
-The application uses MySQL to store product information and order records. The database consists of three main tables:
+The application uses a MySQL database named smtph_db to store smartphone product information and customer orders. The database consists of three related tables:
 
 | Table | Description |
 |---|---|
-| `smtph` | Stores smartphone information, including brand, name, price, image filename, and description. |
-| `sale_order` | Stores order information, including order date, total price, and customer details. |
-| `order_detail` | Stores the products and quantities associated with each order. |
+| `smtph` | Stores smartphone details, including product ID, brand, name, price, image filename, and description. |
+| `sale_order` | Stores order records, including order date, total price, and customer information. |
+| `order_detail` | Stores individual items within each order, including product ID, quantity, price, and product name. |
 
-Primary keys and foreign keys are used to establish relationships between the tables and maintain connections between orders and their product details.
+Primary keys and foreign keys are used to maintain relationships between the tables. The order_detail table connects sale_order and smtph through foreign keys, linking each order to its associated products.
+
+The SQL script also includes sample product records and order data for database testing.
 
 ## Technologies Used
 
 - **Programming Language:** Java
 - **GUI Framework:** JavaFX
 - **Database:** MySQL
+- **Query Language:** SQL
+- **Database Connectivity:** MariaDB JDBC Driver
 - **Database Management:** XAMPP / phpMyAdmin
+
+## Database Setup
+
+The SQL script is provided in the database/ folder.
+**Note:** The customer names (e.g., John and Amy) used in the sample order records are fictitious and are included for demonstration and testing purposes only.
+
+### Setup Instructions:
+
+Start the MySQL database service using XAMPP.
+
+Open phpMyAdmin.
+
+Import database/smtph_db.sql to create the database and its tables.
+
+The script also inserts sample product and order records.
+
+**Note:** The SQL script starts by dropping the existing smtph_db database before creating it again. Importing the script will permanently remove existing data in that database. Back up any important data before running it.
 
 ## Screenshots
 
