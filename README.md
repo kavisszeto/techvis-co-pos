@@ -112,7 +112,7 @@ Through this project, I gained practical experience in:
 - Implementing input validation and handling incomplete customer information.
 - Integrating product management and order processing into one application.
 
-### Additional Documentation
+## Additional Documentation
 
 A detailed project documentation in Traditional Chinese (正體／繁體中文) is also available in Microsoft Word format.
 
